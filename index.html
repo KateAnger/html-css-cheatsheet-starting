@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheatsheet</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>CSS Selectors and Specificity</h1>
+
+    <!-- basic selectors table -->
+    <table id="basic">
+        <h2>Basic Selectors</h2>
+        <thead>
+            <tr>
+                <th class="name">Name</th>
+                <th class="description">Description</th>
+                <th class="source">Source</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Universal</td>
+                <td>Selects all elements. Optionally, it may be restricted to a specific namespace or to all namespaces.
+                    Syntax:
+                    * ns|* *|* Example: * will match all the elements of the document.</td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors">MDN</a></td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>Selects all elements that have the given node name. Syntax: elementname Example: input will match
+                    any
+                    &lt;input&gt; element.
+                </td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors">MDN</a></td>
+            </tr>
+            <tr>
+                <td>Class</td>
+                <td>Selects all elements that have the given class attribute. Syntax: .classname Example: .index will
+                    match
+                    any element that has a class of "index".</td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors">MDN</a></td>
+            </tr>
+            <tr>
+                <td>Id</td>
+                <td>Selects an element based on the value of its id attribute. There should be only one element with a
+                    given
+                    ID in a document. Syntax: #idname Example: #toc will match the element that has the ID "toc".</td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors">MDN</a></td>
+            </tr>
+            <tr>
+                <td>Attribute</td>
+                <td>Selects all elements that have the given attribute. Syntax: [attr] [attr=value] [attr~=value]
+                    [attr|=value] [attr^=value] [attr$=value] [attr*=value] Example: [autoplay] will match all elements
+                    that
+                    have the autoplay attribute set (to any value).</td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors">MDN</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- end basic selectors table -->
+
+    <!-- Grouping selectors -->
+    <table id="grouping">
+        <h2>Grouping Selectors</h2>
+        <thead>
+            <tr>
+                <th class="name">Name</th>
+                <th class="description">Description</th>
+                <th class="source">Source</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Selector list</td>
+                <td>The , selector is a grouping method that selects all the matching nodes. Syntax: A, B Example: div,
+                    span
+                    will match both &lt;span&gt; and &lt;div&gt; elements.</td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Selector_list">MDN</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- end Grouping selectors -->
+
+    <!-- combinators table -->
+    <table id="combinator">
+        <h2>Combinators</h2>
+        <thead>
+            <tr>
+                <th class="name">Name</th>
+                <th class="description">Description</th>
+                <th class="source">Source</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Descendant</td>
+                <td>The (space) combinator selects nodes that are descendants of the first element. Syntax: A B Example:
+                    div
+                    span will match all &lt;span> elements that are inside a &lt;div&gt; element.</td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator">MDN</a></td>
+            </tr>
+            <tr>
+                <td>Child</td>
+                <td>The > combinator selects nodes that are direct children of the first element. Syntax: A > B Example:
+                    ul
+                    > li will match all &lt;li&gt; elements that are nested directly inside a &lt;ul&gt; element.
+                </td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator">MDN</a></td>
+            </tr>
+            <tr>
+                <td>General sibling</td>
+                <td>The ~ combinator selects siblings. This means that the second element follows the first (though not
+                    necessarily immediately), and both share the same parent. Syntax: A ~ B Example: p ~ span will match
+                    all
+                    &lt;span&gt; elements that follow a &lt;p&gt;, immediately or not.</td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator">MDN</a></td>
+            </tr>
+            <tr>
+                <td>Adjacent sibling</td>
+                <td>The + combinator matches the second element only if it immediately follows the first element.
+                    Syntax: A
+                    + B Example: h2 + p will match all &lt;p&gt; elements that immediately follows
+                    &lt;h2&gt; element.
+                </td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator">MDN</a></td>
+            </tr>
+            <tr>
+                <td>Column</td>
+                <td>The || combinator selects nodes which belong to a column. Syntax: A || B Example: col || td will
+                    match
+                    all
+                    &lt;td&gt; elements that belong to the scope of the
+                    &lt;col&gt;.
+                </td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Column_combinator">MDN</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- end combinators table -->
+
+    <!-- pseudo table -->
+    <table id="pseudo">
+        <h2>Pseudo</h2>
+        <thead>
+            <tr>
+                <th class="name">Name</th>
+                <th class="description">Description</th>
+                <th class="source">Source</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Pseudo classes</td>
+                <td>The : pseudo allow the selection of elements based on state information that is not contained in the
+                    document tree. Example: a:visited will match all <a> elements that have been visited by the user.
+                </td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">MDN</a></td>
+            </tr>
+            <tr>
+                <td>Pseudo elements</td>
+                <td>The :: pseudo represent entities that are not included in HTML. Example: p::first-line will match
+                    the
+                    first line of all &lt;p&gt; elements.</td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements">MDN</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- end pseudo table -->
+
+    <h3>Source</h3>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">CSS Selectors</a></p>
+    <h3>For future reference</h3>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table">Table</a></p>
+    <p id="today"></p>
+    <script>
+        let today = new Date();
+        document.getElementById("today").innerHTML = today.toDateString();
+    </script>
+
+</body>
+
+</html>
